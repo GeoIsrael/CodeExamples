@@ -1,0 +1,20 @@
+package core.functionalInterfaces;
+
+import java.util.function.Predicate;
+
+//Определяем свой функциональный интерфейс
+@FunctionalInterface
+interface MyPredicate {
+    boolean test(Integer value);
+}
+
+public class Tester {
+    public static void main(String[] args) throws Exception {
+        MyPredicate myPredicate = x -> x > 0;
+        System.out.println(myPredicate.test(10));   //true
+
+        //Аналогично, но используется встроенный функциональный интерфейс java.util.function.Predicate
+        Predicate<Integer> predicate = x -> x > 0;
+        System.out.println(predicate.test(-10));    //false
+    }
+}
