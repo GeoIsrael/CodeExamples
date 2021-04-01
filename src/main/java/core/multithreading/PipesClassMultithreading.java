@@ -18,7 +18,7 @@ public class PipesClassMultithreading {
             @Override
             public void run() {
                 try {
-                    output.write("Hello world, pipe!".getBytes());
+                    output.write("Hello world, pipe!\n".getBytes());
                 } catch (IOException e) {
                 }
             }
@@ -26,6 +26,7 @@ public class PipesClassMultithreading {
 
 
         Thread thread2 = new Thread(new Runnable() {
+
             @Override
             public void run() {
                 try {
@@ -41,6 +42,8 @@ public class PipesClassMultithreading {
 
         thread1.start();
         thread2.start();
+        System.out.println(thread2.getName() + " " + thread2.getId() + " " + thread2.getState() + " " + thread2.getThreadGroup());
+
 
     }
 
