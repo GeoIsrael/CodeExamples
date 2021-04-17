@@ -11,13 +11,16 @@ public class Permutations {
 
     public static void main(String[] args) {
 
-        List<Integer> vals = Ints.asList(new int[] {4, 2, 5, 7});
+        List<Integer> vals = Ints.asList(new int[] {4, 2, 5, 7, 9});
 
         Collection<List<Integer>> orderPerm =
                 Collections2.permutations(vals);
 
+        Integer i = 0;
+
         for (List<Integer> val : orderPerm) {
-            System.out.println(val);
+
+            System.out.println(++i + "->" + val);
         }
 
 
